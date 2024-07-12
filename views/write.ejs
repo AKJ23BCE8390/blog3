@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+<style>
+      label, input, textarea {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        .formBox {
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px; /* Increased width */
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+        textarea {
+            width: 100%;
+            height: 400px; /* Increased height */
+            resize: none; /* Prevent resizing */
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .btn {
+            font-size: 2rem;
+            padding: 10px 20px;
+        }
+</style>
+
+<form class="formBox" action="/submitWriting" method="post">
+    <label for="blgTitle">Title:</label>
+    <input type="text" id="blgTitle" name="blgTitle" required><br><br>
+    <label for="writingBlog">Write your Blog here:</label>
+    <textarea id="writingBlog" name="writingBlog" rows="10" cols="50" required></textarea><br><br>
+    <input class="btn btn-primary" id="submit_btn" type="submit" value="Submit">
+</form>
+
+
+
+<script>
+    let btn = document.getElementById("submit_btn");
+let numberOfTimesSubmit = 0;
+btn.addEventListener("click", function(){
+    numberOfTimesSubmit+=1;
+    console.log(numberOfTimesSubmit);
+});
+
+</script>
+
+<%- include("partials/footer.ejs") %>

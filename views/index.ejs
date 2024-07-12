@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+<style>
+  .cardSetOfBlogs{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+    justify-items: center;
+  }
+  body{
+    height:max-content;
+  }
+</style>
+<div class="cardSetOfBlogs">
+  <div class="card" style="width: 18rem;">
+    <img src="media/bird-8788491_1280.webp" class="card-img-top" alt="Image not available">
+    <div class="card-body">
+      <div class="card-title">
+        <% if (locals.blogTitle){ %>
+          <h3><%= blogTitle %></h3>
+          <% }else{ %>
+            <h3>Title</h3>
+            <% } %>
+      </div>
+      <p class="card-text"></p>
+      <a href="/readBlog" class="btn btn-primary">Read</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="media/bridge-8800485_640.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="media/istockphoto-1534040386-2048x2048.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
